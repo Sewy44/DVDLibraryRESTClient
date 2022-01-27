@@ -1,0 +1,26 @@
+#titleLink{
+    cursor:pointer;
+    color:blue;
+    border: none;
+    background-color:#dee2e6;
+    background: none;
+}
+#titleLink:hover{
+    color:dodgerblue;
+    text-decoration:underline;
+}
+
+#titleLink:visited{
+    color:blueviolet;
+
+}
+
+#editButton{
+    display:-webkit-inline-box;
+}
+#headerDiv{
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+
