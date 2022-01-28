@@ -1,4 +1,4 @@
-# DVDLibraryUI
+# DVDLibraryRESTClient
 
 ## Description
 A single HTML page that connects to a DVD Web API Service via Ajax calls with jQuery. 
