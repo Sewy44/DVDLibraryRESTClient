@@ -98,7 +98,7 @@ function SearchMovie() {
                     var rating = dvd.Rating;
 
                     var row = '<tr>';
-                    row += '<td id=titleRow><button id="titleLink" type="link" onclick="displaySummary(' + id + ')">' + title + '</button></td>';
+                    row += '<td id=titleRow><button type="link" onclick="displaySummary(' + id + ')">' + title + '</button></td>';
                     row += '<td>' + releaseYear + '</td>';
                     row += '<td>' + director + '</td>';
                     row += '<td>' + rating + '</td>';
