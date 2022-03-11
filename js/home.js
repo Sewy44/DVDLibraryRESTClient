@@ -5,12 +5,12 @@ $(document).ready(function () {
     hideCreateDvdForm();
     updateDvd();
     leaveSummaryScreen();
-    SearchMovie();
+    searchMovie();
 });
 
 function loadMovies() {
     clearMovieTable();
-    var contentRows = $('#contentRows');
+    let contentRows = $('#contentRows');
 
     $.ajax({
         type: 'GET',
@@ -18,13 +18,13 @@ function loadMovies() {
         success: function (contactArray) {
             $.each(contactArray, function (index, dvd) {
 
-                var id = dvd.DvdId;
-                var title = dvd.Title;
-                var releaseYear = dvd.ReleaseYear;
-                var director = dvd.Director;
-                var rating = dvd.Rating;
+                let id = dvd.DvdId;
+                let title = dvd.Title;
+                let releaseYear = dvd.ReleaseYear;
+                let director = dvd.Director;
+                let rating = dvd.Rating;
 
-                var row = '<tr>';
+                let row = '<tr>';
                 row += '<td id=titleColumn><button type="link" id="titleLink" onclick="displaySummary(' + id + ')">' + title + '</button></td>';
                 row += '<td>' + releaseYear + '</td>';
                 row += '<td>' + director + '</td>';
@@ -71,15 +71,15 @@ function hideCreateDvdForm() {
     })
 }
 
-function SearchMovie() {
+function searchMovie() {
     $('#searchButton').click(function (event) {
-        var contentRows = $('#contentRows');
+        let contentRows = $('#contentRows');
         contentRows.empty();
-        var category = $('#categorySelect').val();
-        var searchTerm = $('#searchTermInput').val();
+        let category = $('#categorySelect').val();
+        let searchTerm = $('#searchTermInput').val();
 
         $('#searchForm').click(function (event) {
-            var haveValidationErrors = checkAndDisplayValidationErrors($('#searchForm').find('input'));
+            let haveValidationErrors = checkAndDisplayValidationErrors($('#searchForm').find('input'));
 
             if (haveValidationErrors) {
                 return false;
@@ -91,13 +91,13 @@ function SearchMovie() {
             url: 'https://localhost:44398/dvds/' + category + '/' + searchTerm,
             success: function (contactArray) {
                 $.each(contactArray, function (index, dvd) {
-                    var title = dvd.Title;
-                    var id = dvd.DvdId;
-                    var releaseYear = dvd.ReleaseYear;
-                    var director = dvd.Director;
-                    var rating = dvd.Rating;
+                    let title = dvd.Title;
+                    let id = dvd.DvdId;
+                    let releaseYear = dvd.ReleaseYear;
+                    let director = dvd.Director;
+                    let rating = dvd.Rating;
 
-                    var row = '<tr>';
+                    let row = '<tr>';
                     row += '<td id=titleRow><button type="link" onclick="displaySummary(' + id + ')">' + title + '</button></td>';
                     row += '<td>' + releaseYear + '</td>';
                     row += '<td>' + director + '</td>';
